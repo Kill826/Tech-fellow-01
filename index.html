@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup Login Contact Flow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Astro</h1>
+
+<!-- SIGNUP PAGE -->
+<div id="signupSection">
+    <h2>Signup</h2>
+    <form id="signupForm">
+        <input type="text" id="suName" placeholder="Username"><br>
+        <input type="email" id="suEmail" placeholder="Email"><br>
+        <input type="password" id="suPassword" placeholder="Password"><br>
+
+        <button type="submit">Signup</button>
+        <p id="signupMsg"></p>
+    </form>
+
+    <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+</div>
+
+<!-- LOGIN PAGE -->
+<div id="loginSection" style="display:none;">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="email" id="liEmail" placeholder="Email"><br>
+        <input type="password" id="liPassword" placeholder="Password"><br>
+
+        <button type="submit">Login</button>
+        <p id="loginMsg"></p>
+    </form>
+
+    <p>Don't have an account? <a href="#" onclick="showSignup()">Signup</a></p>
+</div>
+
+<!-- HOME PAGE -->
+<div id="homeSection" style="display:none;">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+    <span class="logo">Astro com</span>
+    <ul class="nav-links">
+        <li onclick="showHome()">Home</li>
+        <li onclick="showContact()">Contact</li>
+        <li onclick="showProfile()">Profile</li>
+    </ul>
+
+    <!-- Logout Button on Right -->
+    <button class="logoutBtn" onclick="logout()">Logout</button>
+</nav>
+
+
+    <!-- HOME CONTENT -->
+    <div class="page" id="homePage">
+        <h2>Welcome, <span id="userName"></span> 👋</h2>
+        <p>This is your home page. Navigate using the menu above.</p>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div class="page" id="contactPage" style="display:none;">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p><b>📧 Email:</b> <a href="mailto:yourmail@gmail.com">yourmail@gmail.com</a></p>
+            <p><b>📞 Phone:</b> <a href="tel:+911234567890">+91 12345 67890</a></p>
+        </div>
+
+        <form id="contactForm">
+            <input type="text" id="cName" placeholder="Your Name"><br>
+            <input type="email" id="cEmail" placeholder="Your Email"><br>
+            <textarea id="cMessage" placeholder="Message"></textarea><br>
+            <button type="submit">Send</button>
+            <p id="contactMsg"></p>
+        </form>
+    </div>
+
+    <!-- PROFILE PAGE -->
+    <div class="page" id="profilePage" style="display:none;">
+        <h2>User Profile</h2>
+        <p><b>Username:</b> <span id="profileName"></span></p>
+        <p><b>Email:</b> <span id="profileEmail"></span></p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
